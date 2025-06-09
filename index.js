@@ -13,14 +13,13 @@ app.use(express.json())
 const corsOptions = {
   origin: [
     'http://localhost:3000',
-    'https://https://glittery-blini-53f327.netlify.app',
+    'https://glittery-blini-53f327.netlify.app',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }
 
 app.use(cors(corsOptions))
-app.options('*', cors(corsOptions))
 
 app.use('/api/auth', authRoutes)
 app.use('/api/password', passwordRoutes)
