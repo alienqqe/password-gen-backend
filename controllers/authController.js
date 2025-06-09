@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt')
 const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
 const supabase = require('../supabaseClient')
-const { sendVerificationEmail } = require('../../utils/mailer')
+const { sendVerificationEmail } = require('../utils/mailer')
 
 exports.register = async (req, res) => {
   const { email, password } = req.body
