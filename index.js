@@ -8,8 +8,19 @@ const passwordRoutes = require('./routes/passwordRoutes')
 const settingsRoutes = require('./routes/settingsRoutes')
 
 const app = express()
-app.use(cors())
+
 app.use(express.json())
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://https://glittery-blini-53f327.netlify.app',
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}
+
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 
 app.use('/api/auth', authRoutes)
 app.use('/api/password', passwordRoutes)
