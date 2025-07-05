@@ -9,7 +9,6 @@ const settingsRoutes = require('./routes/settingsRoutes')
 
 const app = express()
 
-app.use(express.json())
 const corsOptions = {
   origin: [
     'http://localhost:3000',
@@ -20,6 +19,8 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+
+app.use(express.json())
 
 app.use('/api/auth', authRoutes)
 app.use('/api/password', passwordRoutes)
