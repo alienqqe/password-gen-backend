@@ -5,7 +5,7 @@ const supabase = require('../supabaseClient')
 const {
   sendVerificationEmail,
   sendResetPasswordEmail,
-} = require('../../utils/mailer')
+} = require('../utils/mailer')
 
 exports.register = async (req, res) => {
   const { email, password } = req.body
